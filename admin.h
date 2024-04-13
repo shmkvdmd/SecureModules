@@ -24,6 +24,10 @@ private slots:
 
     void on_toBanFormBtn_clicked();
 
+    void on_eraseLogsBtn_clicked();
+
+    void on_eraseBanLogsBtn_clicked();
+
 private:
     Ui::Admin *ui;
 };

@@ -38,7 +38,7 @@
     <enum>QFrame::StyledPanel</enum>
    </property>
    <property name="sizeAdjustPolicy">
-    <enum>QAbstractScrollArea::AdjustToContents</enum>
+    <enum>QAbstractScrollArea::AdjustIgnored</enum>
    </property>
    <property name="rowCount">
     <number>0</number>
@@ -83,10 +83,10 @@
   <widget class="QPushButton" name="pushButton_2">
    <property name="geometry">
     <rect>
-     <x>40</x>
-     <y>0</y>
+     <x>10</x>
+     <y>10</y>
      <width>91</width>
-     <height>29</height>
+     <height>21</height>
     </rect>
    </property>
    <property name="text">
@@ -96,7 +96,7 @@
   <widget class="QLineEdit" name="maxCountLineEdit">
    <property name="geometry">
     <rect>
-     <x>410</x>
+     <x>380</x>
      <y>10</y>
      <width>71</width>
      <height>21</height>
@@ -106,7 +106,7 @@
   <widget class="QLabel" name="maxLabel">
    <property name="geometry">
     <rect>
-     <x>140</x>
+     <x>110</x>
      <y>10</y>
      <width>271</width>
      <height>21</height>

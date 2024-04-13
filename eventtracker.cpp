@@ -1,19 +1,16 @@
 #include "eventtracker.h"
 #include "ui_eventtracker.h"
-#include "mainwindow.h"
-#include "usermanager.h"
-#include "fstream"
-#include "admin.h"
-#include <vector>
+
 EventTracker::EventTracker(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::EventTracker)
 {
     ui->setupUi(this);
-    ui->eventTable->setColumnWidth(0, 300);
-    ui->eventTable->setColumnWidth(1, 200);
-    ui->eventTable->setColumnWidth(2, 200);
-    ui->eventTable->setColumnWidth(3, 150);
+    QTableWidget *eventTable = findChild<QTableWidget*>("eventTable");
+    if (eventTable){
+        QHeaderView *header = eventTable->horizontalHeader();
+        header->setSectionResizeMode(QHeaderView::Stretch);
+    }
     ui->maxCountLineEdit->setValidator(new QIntValidator(0, 999, this));
 }
 
@@ -34,7 +31,6 @@ std::vector<std::string> EventTracker::ParseData(){
     while(getline(ifs,line, '|')){
         tokens.push_back(line);
     }
-    tokens.pop_back();
     for (const auto& token : tokens){
         qDebug() << QString::fromStdString(token);
     }
@@ -47,12 +43,12 @@ void EventTracker::FillTable(){
     ui->eventTable->setRowCount(0);
     size_t column_count = ui->eventTable->columnCount();
     size_t row = ui->eventTable->rowCount();
-    size_t max = items.size() / 4;
+    size_t max = items.size() / column_count;
     if(!ui->maxCountLineEdit->text().isEmpty()){
-        max = items.size() / 4 < ui->maxCountLineEdit->text().toInt() ? items.size() / 4 : ui->maxCountLineEdit->text().toInt();
+        max = items.size() / column_count < ui->maxCountLineEdit->text().toInt() ? items.size() / column_count : ui->maxCountLineEdit->text().toInt();
     }
     qDebug() << max;
-    for(size_t i = 0; i != max * 4; ++row){
+    for(size_t i = 0; i != max * column_count; ++row){
         ui->eventTable->insertRow(row);
         for (size_t col = 0; col < column_count; ++col, ++i){
             ui->eventTable->setItem(row, col, new QTableWidgetItem(QString::fromStdString(items[i])));

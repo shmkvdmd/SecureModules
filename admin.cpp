@@ -48,3 +48,27 @@ void Admin::on_toBanFormBtn_clicked()
     this->close();
 }
 
+
+void Admin::on_eraseLogsBtn_clicked()
+{
+    std::ofstream ofs;
+    ofs.open("log.txt", std::ofstream::out | std::ofstream::trunc);
+    if(!ofs.is_open()){
+        QMessageBox::warning(this, "Ошибка", "Файл не открылся");
+    }
+    ofs.close();
+    QMessageBox::information(this, "Успешно", "Файл очищен");
+}
+
+
+void Admin::on_eraseBanLogsBtn_clicked()
+{
+    std::ofstream ofs;
+    ofs.open("ban_logs.txt", std::ofstream::out | std::ofstream::trunc);
+    if(!ofs.is_open()){
+        QMessageBox::warning(this, "Ошибка", "Файл не открылся");
+    }
+    ofs.close();
+    QMessageBox::information(this, "Успешно", "Файл очищен");
+}
+

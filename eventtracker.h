@@ -1,6 +1,10 @@
 #ifndef EVENTTRACKER_H
 #define EVENTTRACKER_H
-
+#include "mainwindow.h"
+#include "usermanager.h"
+#include "fstream"
+#include "admin.h"
+#include <vector>
 #include <QWidget>
 
 namespace Ui {

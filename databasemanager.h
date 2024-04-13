@@ -93,8 +93,7 @@ public:
                 block_end_ = block_time.toStdString();
                 block_status_ = "Заблокирован";
                 ip_ = ip.toStdString();
-                out << "LOG_TYPE: " << log_type_ << " |USER_LOGIN: " << user_login_ << " |STARTED: " << block_started_ << " |END: " << block_end_ << " |STATUS: " << block_status_
-                    << " |IP: " <<  ip_ << std::endl;
+                out << "LOG_TYPE: " << log_type_ << " |USER_LOGIN: " << user_login_ << " |STARTED: " << block_started_ << " |END: " << block_end_ << " |IP: " <<  ip_;
                 out.close();
                 qDebug() << "Лог добавлен.";
                 return true;
@@ -159,7 +158,7 @@ public:
                 user_login_ = login.isNull() ? "NULL" : login.toStdString();
                 date_ = curr_time.toString("yyyy-MM-dd HH:mm:ss").toStdString();
                 ip_ = ip.toStdString();
-                out << "LOG_TYPE: " << log_type_ << "|USER_LOGIN: " << user_login_ << "|DATE: " << date_ << "|IP: " << ip_ << "|" << std::endl;
+                out << "LOG_TYPE: " << log_type_ << "|USER_LOGIN: " << user_login_ << "|DATE: " << date_ << "|IP: " << ip_ << "|";
                 out.close();
                 qDebug() << "Лог добавлен.";
                 return true;

@@ -6,14 +6,26 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>254</width>
-    <height>362</height>
+    <width>250</width>
+    <height>360</height>
    </rect>
   </property>
-  <property name="windowTitle">
-   <string>Form</string>
+  <property name="minimumSize">
+   <size>
+    <width>250</width>
+    <height>360</height>
+   </size>
   </property>
-  <widget class="QWidget" name="">
+  <property name="maximumSize">
+   <size>
+    <width>250</width>
+    <height>360</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Регистрация</string>
+  </property>
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>10</x>
