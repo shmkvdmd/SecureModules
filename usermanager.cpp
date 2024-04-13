@@ -35,3 +35,10 @@ QString UserManager::getCurrentUserRole()
 {
     return currentUserRole_;
 }
+
+QString UserManager::setCurrentUserRole(const QString& role){
+    currentUserRole_ = role;
+}
+QString UserManager::setCurrentUserLogin(const QString& login){
+    currentUserLogin_ = login;
+}

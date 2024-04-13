@@ -56,17 +56,9 @@ void EventTracker::FillTable(){
 
 void EventTracker::on_pushButton_clicked()
 {
-    UserManager& userManager = UserManager::instance();
-    if(userManager.getCurrentUserRole() == "Администратор"){
-        Admin *admin = new Admin();
-        admin->show();
-        this->close();
-    }
-    else{
-        MainWindow *mainWindow = new MainWindow();
-        mainWindow->show();
-        this->close();
-    }
+    Admin *admin = new Admin();
+    admin->show();
+    this->close();
 }
 
 
