@@ -32,7 +32,6 @@ std::vector<std::string> EventTracker::ParseData(){
         tokens.push_back(line);
     }
     for (const auto& token : tokens){
-        qDebug() << QString::fromStdString(token);
     }
     return tokens;
 }
@@ -47,7 +46,6 @@ void EventTracker::FillTable(){
     if(!ui->maxCountLineEdit->text().isEmpty()){
         max = items.size() / column_count < ui->maxCountLineEdit->text().toInt() ? items.size() / column_count : ui->maxCountLineEdit->text().toInt();
     }
-    qDebug() << max;
     for(size_t i = 0; i != max * column_count; ++row){
         ui->eventTable->insertRow(row);
         for (size_t col = 0; col < column_count; ++col, ++i){

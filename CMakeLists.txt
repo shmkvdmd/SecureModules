@@ -43,6 +43,9 @@ set(PROJECT_SOURCES
         bantracker.cpp
         bantracker.h
         bantracker.ui
+        chart.cpp
+        chart.h
+        chart.ui
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)

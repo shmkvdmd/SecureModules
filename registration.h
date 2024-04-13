@@ -1,6 +1,8 @@
 #ifndef REGISTRATION_H
 #define REGISTRATION_H
-
+#include "admin.h"
+#include "usermanager.h"
+#include "includes.h"
 #include <QWidget>
 
 namespace Ui {

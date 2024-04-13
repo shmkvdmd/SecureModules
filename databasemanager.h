@@ -93,7 +93,7 @@ public:
                 block_end_ = block_time.toStdString();
                 block_status_ = "Заблокирован";
                 ip_ = ip.toStdString();
-                out << "LOG_TYPE: " << log_type_ << " |USER_LOGIN: " << user_login_ << " |STARTED: " << block_started_ << " |END: " << block_end_ << " |IP: " <<  ip_;
+                out << "LOG_TYPE: " << log_type_ << " |USER_LOGIN: " << user_login_ << " |STARTED: " << block_started_ << " |END: " << block_end_ << " |IP: " <<  ip_ << "|";
                 out.close();
                 qDebug() << "Лог добавлен.";
                 return true;

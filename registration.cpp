@@ -1,8 +1,5 @@
 #include "registration.h"
 #include "ui_registration.h"
-#include "admin.h"
-#include "includes.h"
-#include "usermanager.h"
 Registration::Registration(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::Registration)
@@ -34,6 +31,7 @@ void Registration::on_addUserBtn_clicked()
             ui->loginLineEdit->clear();
             ui->passLineEdit->clear();
             ui->rolesList->setCurrentIndex(0);
+            DatabaseManager::AddSimpleLog("Добавление нового пользователя", userManager.getCurrentUserLogin());
             QMessageBox::information(this, "Регистрация", "Пользователь успешно зарегистрирован.");
         }
         else{

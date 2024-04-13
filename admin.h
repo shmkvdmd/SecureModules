@@ -14,6 +14,7 @@ class Admin : public QWidget
 public:
     explicit Admin(QWidget *parent = nullptr);
     ~Admin();
+    void eraseData(const QString& filename);
 
 private slots:
     void on_pushButton_clicked();
@@ -27,6 +28,8 @@ private slots:
     void on_eraseLogsBtn_clicked();
 
     void on_eraseBanLogsBtn_clicked();
+
+    void on_toDocsBtn_clicked();
 
 private:
     Ui::Admin *ui;
