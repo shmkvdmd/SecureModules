@@ -9,6 +9,7 @@ LoginForm::LoginForm(QWidget *parent) :
     ui(new Ui::LoginForm)
 {
     ui->setupUi(this);
+    userManager.createUser("admin", "admin", "Администратор");
 }
 
 LoginForm::~LoginForm()
@@ -21,7 +22,7 @@ void LoginForm::on_loginButton_clicked()
 {
     QString login = ui->loginLineEdit->text();
     QString password = ui->passLineEdit->text();
-    if ((login == "admin" && password == "admin") || userManager.loginUser(login,password) == 777){
+    if (userManager.loginUser(login,password) == ADMIN_ID){
         DatabaseManager::AddSimpleLog("Вход в систему", login);
         Admin *admin = new Admin();
         admin->show();

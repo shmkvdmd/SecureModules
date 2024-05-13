@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string>Подсчет записей</string>
   </property>
   <widget class="QPushButton" name="getLogCountBtn">
    <property name="geometry">
@@ -39,7 +39,7 @@
     <string>Назад</string>
    </property>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>0</x>

@@ -1,6 +1,7 @@
 #include "usermanager.h"
 #include <QCryptographicHash>
 #include "user.h"
+
 bool UserManager::createUser(const QString& login, const QString& password, const QString& role) {
     QString hashedPassword = hashPassword(password);
     User newUser(login, password, role);
@@ -14,7 +15,7 @@ int UserManager::loginUser(const QString& login, const QString& password) {
             currentUserRole_ = databaseManager.getUserRole(login, hashedPassword);
             currentUserLogin_ = login;
             if(currentUserRole_ == "Администратор"){
-                return 777;
+                return ADMIN_ID;
             }
             return 1;
         }

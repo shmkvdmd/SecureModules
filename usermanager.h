@@ -4,6 +4,7 @@
 #include "user.h"
 #include "databasemanager.h"
 #include "includes.h"
+const static int ADMIN_ID = 777;
 
 class UserManager
 {
